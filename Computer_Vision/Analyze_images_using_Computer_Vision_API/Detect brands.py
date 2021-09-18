@@ -9,7 +9,7 @@ import os
 import sys
 import time
 
-subscription_key = ""
+subscription_key = " "
 endpoint = "https://azcogsvcsresource.cognitiveservices.azure.com/"
 
 computervision_client = ComputerVisionClient(endpoint, CognitiveServicesCredentials(subscription_key))
