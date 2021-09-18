@@ -5,17 +5,16 @@ from msrest.authentication import CognitiveServicesCredentials
 
 from array import array
 import os
-from PIL import Image
+#from PIL import Image
 import sys
 import time
 
-subscription_key = "<enter your key here>"
-endpoint = "<enter your endpoint URL here>"
+subscription_key = "56bbf74fb55940099a58bef2ad2b253d"
+endpoint = "https://azcogsvcsresource.cognitiveservices.azure.com/"
 
 computervision_client = ComputerVisionClient(endpoint, CognitiveServicesCredentials(subscription_key))
 
-remote_image_url = "https://raw.githubusercontent.com/gottagetgit/AI102Files/main/Computer_Vision" \
-                   "/Analyze_images_using_Computer_Vision_API/Images/Landmark.jpg "
+remote_image_url = "https://github.com/vivkap/AI102Files/tree/Cognitive-Introduction/Computer_Vision/Analyze_images_using_Computer_Vision_API/Images/IMG_6358.jpg"
 
 '''
 Tag an Image - remote
