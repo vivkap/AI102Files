@@ -5,12 +5,12 @@ from msrest.authentication import CognitiveServicesCredentials
 
 from array import array
 import os
-from PIL import Image
+#from PIL import Image
 import sys
 import time
 
-subscription_key = "<enter your key here>"
-endpoint = "<enter your endpoint URL here>"
+subscription_key = "56bbf74fb55940099a58bef2ad2b253d"
+endpoint = "https://azcogsvcsresource.cognitiveservices.azure.com/"
 
 computervision_client = ComputerVisionClient(endpoint, CognitiveServicesCredentials(subscription_key))
 
@@ -22,6 +22,10 @@ print("===== Detect Brands - remote =====")
 # Get a URL with a brand logo
 remote_image_url = "https://raw.githubusercontent.com/gottagetgit/AI102Files/main/Computer_Vision" \
                    "/Analyze_images_using_Computer_Vision_API/Images/gray-shirt-logo.jpg "
+
+#remote_image_url = "https://raw.githubusercontent.com/vivkap/AI102Files/Cognitive-Introduction/Computer_Vision" \
+#                   "/Analyze_images_using_Computer_Vision_API/Images/IMG_6331.JPG"
+
 # Select the visual feature(s) you want
 remote_image_features = ["brands"]
 # Call API with URL and features
@@ -43,6 +47,7 @@ This example detects common brands like logos and puts a bounding box around the
 print("===== Detect Brands - local =====")
 # Open image file
 local_image_path_shirt = "Images/gray-shirt-logo.jpg"
+#local_image_path_shirt = "Images/IMG_6331.JPG"
 local_image_shirt = open(local_image_path_shirt, "rb")
 # Select the visual feature(s) you want
 local_image_features = ["brands"]

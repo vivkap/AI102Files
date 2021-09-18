@@ -14,9 +14,10 @@ endpoint = "https://azcogsvcsresource.cognitiveservices.azure.com/"
 
 computervision_client = ComputerVisionClient(endpoint, CognitiveServicesCredentials(subscription_key))
 
-##
 
-remote_image_url = "https://github.com/vivkap/AI102Files/tree/Cognitive-Introduction/Computer_Vision/Analyze_images_using_Computer_Vision_API/Images/IMG_6358.jpg"
+remote_image_url = "https://raw.githubusercontent.com/vivkap/AI102Files/Cognitive-Introduction/Computer_Vision" \
+                   "/Analyze_images_using_Computer_Vision_API/Images/IMG_6358.JPG"
+
 
 '''
 Tag an Image - remote
@@ -34,13 +35,14 @@ else:
     for tag in tags_result_remote.tags:
         print("'{}' with confidence {:.2f}%".format(tag.name, tag.confidence * 100))
 print()
+
 '''
 Tag an Image - local
 This example returns a tag (key word) for each thing in the image.
 '''
 print("===== Tag an Image - local =====")
 # Open local image file
-local_image_path = "Images/Landmark.jpg"
+local_image_path = "Images/IMG_6358.JPG"
 local_image = open(local_image_path, "rb")
 # Call API local image
 tags_result_local = computervision_client.tag_image_in_stream(local_image)

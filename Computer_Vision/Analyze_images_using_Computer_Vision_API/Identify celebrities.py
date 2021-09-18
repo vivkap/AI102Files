@@ -5,12 +5,12 @@ from msrest.authentication import CognitiveServicesCredentials
 
 from array import array
 import os
-from PIL import Image
+#from PIL import Image
 import sys
 import time
 
-subscription_key = "<enter your key here>"
-endpoint = "<enter your endpoint URL here>"
+subscription_key = "56bbf74fb55940099a58bef2ad2b253d"
+endpoint = "https://azcogsvcsresource.cognitiveservices.azure.com/"
 
 computervision_client = ComputerVisionClient(endpoint, CognitiveServicesCredentials(subscription_key))
 
@@ -20,8 +20,9 @@ This example detects celebrites and landmarks in remote images.
 '''
 print("===== Detect Domain-specific Content - remote =====")
 # URL of one or more celebrities
-remote_image_url_celebs = "https://raw.githubusercontent.com/Azure-Samples/cognitive-services-sample-data-files" \
-                          "/master/ComputerVision/Images/faces.jpg "
+remote_image_url_celebs = "https://raw.githubusercontent.com/vivkap/AI102Files/Cognitive-Introduction/Computer_Vision" \
+                   "/Analyze_images_using_Computer_Vision_API/Images/Faces.jpg"
+
 # Call API with content type (celebrities) and URL
 detect_domain_results_celebs_remote = computervision_client.analyze_image_by_domain("celebrities",
                                                                                     remote_image_url_celebs)

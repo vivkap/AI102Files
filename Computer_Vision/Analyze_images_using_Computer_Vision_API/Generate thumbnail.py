@@ -5,12 +5,12 @@ from msrest.authentication import CognitiveServicesCredentials
 
 from array import array
 import os
-from PIL import Image
+#from PIL import Image
 import sys
 import time
 
-subscription_key = "<enter your key here>"
-endpoint = "<enter your endpoint URL here>"
+subscription_key = "56bbf74fb55940099a58bef2ad2b253d"
+endpoint = "https://azcogsvcsresource.cognitiveservices.azure.com/"
 
 computervision_client = ComputerVisionClient(endpoint, CognitiveServicesCredentials(subscription_key))
 
@@ -21,7 +21,7 @@ This example creates a thumbnail from both a local and URL image.
 print("===== Generate Thumbnails - local =====")
 
 # Generate a thumbnail from a local image
-local_image_path_thumb = "Images/Faces.jpg"
+local_image_path_thumb = "Images/P1010034.JPG"
 local_image_thumb = open(local_image_path_thumb, "rb")
 
 print("Generating thumbnail from a local image...")
@@ -44,8 +44,11 @@ print()
 print("===== Generate Thumbnails - remote =====")
 # Generate a thumbnail from a URL image
 # URL of faces
-remote_image_url_thumb = "https://raw.githubusercontent.com/gottagetgit/AI102Files/main/Computer_Vision" \
-                         "/Analyze_images_using_Computer_Vision_API/Images/Faces.jpg "
+#remote_image_url_thumb = "https://raw.githubusercontent.com/gottagetgit/AI102Files/main/Computer_Vision" \
+#                         "/Analyze_images_using_Computer_Vision_API/Images/Faces.jpg "
+
+remote_image_url_thumb = "https://raw.githubusercontent.com/vivkap/AI102Files/Cognitive-Introduction/Computer_Vision" \
+                          "/Analyze_images_using_Computer_Vision_API/Images/P1010034.JPG"
 
 print("Generating thumbnail from a URL image...")
 # Returns a Generator object, a thumbnail image binary (list).
