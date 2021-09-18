@@ -14,6 +14,8 @@ endpoint = "https://azcogsvcsresource.cognitiveservices.azure.com/"
 
 computervision_client = ComputerVisionClient(endpoint, CognitiveServicesCredentials(subscription_key))
 
+##
+
 remote_image_url = "https://github.com/vivkap/AI102Files/tree/Cognitive-Introduction/Computer_Vision/Analyze_images_using_Computer_Vision_API/Images/IMG_6358.jpg"
 
 '''
